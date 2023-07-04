@@ -7,16 +7,17 @@ const pageStyles = {
 }
 
 const IndexPage: React.FC<PageProps> = () => {
-  const handleGoToElfie = () => {
+  const [url, setUrl] = React.useState('#')
+  React.useEffect(() => {
     const params = queryString.parse(location.search);
     const redirectBaseUri = params.redirect
     const redirectLink = `${redirectBaseUri}/embark?action=authen&token=${params.token}`
     const completeRedirectUrl = `${redirectBaseUri}?amv=${params.amv}&apn=${params.apn}&ibi=${params.apn}&imv=0&link=${encodeURIComponent(redirectLink)}`
-    window.location.replace(completeRedirectUrl)
-  }
+    setUrl(completeRedirectUrl)
+  })
   return (
     <main style={pageStyles}>
-      <button onClick={handleGoToElfie}>Go to Elfie</button>
+      <a id="deeplinkURL" target="_blank" href={url}><button>Go to Elfie</button></a>
     </main>
   )
 }
