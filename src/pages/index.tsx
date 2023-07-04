@@ -77,7 +77,7 @@ const IndexPage: React.FC<PageProps> = () => {
       setTimeout(() => setRedirectAfter(redirectAfter - 1), 1000)
     } else {
       window.open(url)
-      history.back()
+      // history.back()
     }
   }, [redirectAfter])
 
