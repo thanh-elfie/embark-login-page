@@ -62,7 +62,7 @@ const redirectAfterText = {
 
 const IndexPage: React.FC<PageProps> = () => {
   const [url, setUrl] = React.useState('#')
-  const [redirectAfter, setRedirectAfter] = React.useState(5)
+  // const [redirectAfter, setRedirectAfter] = React.useState(5)
   
   React.useEffect(() => {
     const params = queryString.parse(location.search);
@@ -72,14 +72,14 @@ const IndexPage: React.FC<PageProps> = () => {
     setUrl(completeRedirectUrl)
   })
 
-  React.useEffect(() => {
-    if (redirectAfter > 0) {
-      setTimeout(() => setRedirectAfter(redirectAfter - 1), 1000)
-    } else {
-      window.open(url)
-      // history.back()
-    }
-  }, [redirectAfter])
+  // React.useEffect(() => {
+  //   if (redirectAfter > 0) {
+  //     setTimeout(() => setRedirectAfter(redirectAfter - 1), 1000)
+  //   } else {
+  //     window.open(url)
+  //     // history.back()
+  //   }
+  // }, [redirectAfter])
 
   return (
     <>
@@ -108,9 +108,9 @@ const IndexPage: React.FC<PageProps> = () => {
                 Go to Elfie
               </a>
             </div>
-            <div style={redirectAfterText}>
+            {/* <div style={redirectAfterText}>
               Redirected after {redirectAfter} seconds
-            </div>
+            </div> */}
           </div>
           </div>
         </div>
