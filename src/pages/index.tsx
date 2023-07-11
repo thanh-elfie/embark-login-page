@@ -72,6 +72,11 @@ const IndexPage: React.FC<PageProps> = () => {
     setUrl(completeRedirectUrl)
   })
 
+  const handleGoToElfie = () => {
+    window.open(url)
+    setTimeout(() => history.back(), 3000)
+  }
+
   // React.useEffect(() => {
   //   if (redirectAfter > 0) {
   //     setTimeout(() => setRedirectAfter(redirectAfter - 1), 1000)
@@ -104,7 +109,7 @@ const IndexPage: React.FC<PageProps> = () => {
               </div>
             </div>
             <div style={buttonWrapper}>
-              <a id="deeplinkURL" style={buttonLink} target="_blank" href={url}>
+              <a id="deeplinkURL" style={buttonLink} target="_blank" href="#" onClick={handleGoToElfie}>
                 Go to Elfie
               </a>
             </div>
