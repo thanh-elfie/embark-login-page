@@ -1,6 +1,5 @@
 import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
-import { withPrefix } from "gatsby"
 import queryString from "query-string";
 import { StaticImage } from "gatsby-plugin-image"
 import { Property } from "csstype"
