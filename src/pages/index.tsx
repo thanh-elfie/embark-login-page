@@ -66,8 +66,7 @@ const IndexPage: React.FC<PageProps> = () => {
   React.useEffect(() => {
     const params = queryString.parse(location.search);
     const redirectBaseUri = params.redirect
-    const redirectLink = `${redirectBaseUri}/embark?action=authen&token=${params.token}`
-    const completeRedirectUrl = `${redirectBaseUri}?amv=${params.amv}&apn=${params.apn}&ibi=${params.apn}&imv=0&link=${encodeURIComponent(redirectLink)}`
+    const completeRedirectUrl = `${redirectBaseUri}?token=${params.token}`
     setUrl(completeRedirectUrl)
   })
 
